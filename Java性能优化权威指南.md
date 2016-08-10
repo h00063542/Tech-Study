@@ -40,13 +40,13 @@
   * 职责：命令行解析、VM生命周期管理、类加载、字节码解释、异常处理、同步、线程管理、Java本地接口、VM致命错误处理、C++堆管理
    * 命令行选项：标准选型、非标准选项（以－X为前缀）、非稳定选项（以－XX为前缀），选项名钱＋或－代表true或false
    * VM生命周期：java
-    * 解析命令行选项：比如 -client或-server 他们决定加载那个JIT
-     * 设置堆的大小和JIT：如果没有明确设置堆和JIT，启动器自动优化设置
-      * 设置环境变了LD_LIBRARY_PATH和CLASSPATH
-      * 如果有－jar选项，找jar中manifest中的Main-Class 否则从命令行读取Main-Class
-      * 使用标准JNI方法JNI_CreateJavaVM在新创建的线程中创建HotSpot VM
-      * 创建好HotSpot VM，加载java Main-Class，调用main方法
-      * 执行完main，调用DetachCurrentThread、DestoryJavaVM
+     1. 解析命令行选项：比如 -client或-server 他们决定加载那个JIT
+     2. 设置堆的大小和JIT：如果没有明确设置堆和JIT，启动器自动优化设置
+     3. 设置环境变了LD_LIBRARY_PATH和CLASSPATH
+     4. 如果有－jar选项，找jar中manifest中的Main-Class 否则从命令行读取Main-Class
+     5 使用标准JNI方法JNI_CreateJavaVM在新创建的线程中创建HotSpot VM
+     6 创建好HotSpot VM，加载java Main-Class，调用main方法
+     7 执行完main，调用DetachCurrentThread、DestoryJavaVM
 
 * JIT编译器
 * 内存管理器
