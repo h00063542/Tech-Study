@@ -44,9 +44,9 @@
      2. 设置堆的大小和JIT：如果没有明确设置堆和JIT，启动器自动优化设置
      3. 设置环境变了LD_LIBRARY_PATH和CLASSPATH
      4. 如果有－jar选项，找jar中manifest中的Main-Class 否则从命令行读取Main-Class
-     5 使用标准JNI方法JNI_CreateJavaVM在新创建的线程中创建HotSpot VM
-     6 创建好HotSpot VM，加载java Main-Class，调用main方法
-     7 执行完main，调用DetachCurrentThread、DestoryJavaVM
+     5. 使用标准JNI方法JNI_CreateJavaVM在新创建的线程中创建HotSpot VM
+     6. 创建好HotSpot VM，加载java Main-Class，调用main方法
+     7. 执行完main，调用DetachCurrentThread、DestoryJavaVM
 
 * JIT编译器
 * 内存管理器
